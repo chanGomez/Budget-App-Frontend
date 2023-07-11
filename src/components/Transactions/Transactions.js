@@ -29,7 +29,7 @@ function Transactions() {
       // This is another way to do it when deploying to the cloud
       async function fetchData() {
         try {
-          const url = process.env.NODE.ENV === "production"
+          const url = process.env.NODE_ENV === "production"
           ? `https://budegt-app-backend.onrender.com/transactions`
           : `http://localhost:3001/transactions`
 

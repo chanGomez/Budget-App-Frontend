@@ -22,7 +22,7 @@ function Update() {
     
       async function handleFetchData() {
         try {
-          const url = process.env.NODE.ENV === "production"
+          const url = process.env.NODE_ENV === "production"
           ? `https://budegt-app-backend.onrender.com/transactions/${id}`
           : `http://localhost:3001/transactions/${id}`
 
@@ -51,7 +51,7 @@ function Update() {
         e.preventDefault();
 
         try {
-          const url = process.env.NODE.ENV === "production"
+          const url = process.env.NODE_ENV === "production"
           ? `https://budegt-app-backend.onrender.com/transactions/${id}/edit`
           : `http://localhost:3001/transactions/${id}/edit`
 

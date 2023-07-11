@@ -17,7 +17,7 @@ async function handleOnSubmit(event) {
     event.preventDefault();
 
     try {
-      const url = process.env.NODE.ENV === "production"
+      const url = process.env.NODE_ENV === "production"
       ? "https://budegt-app-backend.onrender.com/transactions/new-transaction"
       : `http://localhost:3001/transactions/new-transaction`
 

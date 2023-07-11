@@ -16,7 +16,7 @@ function Transaction() {
 
   async function fetchData(){
     try {
-      const url = process.env.NODE.ENV === "production"
+      const url = process.env.NODE_ENV === "production"
       ? `https://budegt-app-backend.onrender.com/transactions/${id}`
       : `http://localhost:3001/transactions/${id}`
 
