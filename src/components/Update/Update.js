@@ -22,7 +22,11 @@ function Update() {
     
       async function handleFetchData() {
         try {
-            let result = await axios.get(`http://localhost:3001/transactions/${id}`)
+          const url = process.env.NODE.ENV === "production"
+          ? `https://budegt-app-backend.onrender.com/transactions/${id}`
+          : `http://localhost:3001/transactions/${id}`
+
+            let result = await axios.get(url)
             
           const {
             amount,
@@ -47,7 +51,11 @@ function Update() {
         e.preventDefault();
 
         try {
-          let result = await axios.put(`http://localhost:3001/transactions/${id}/edit`, 
+          const url = process.env.NODE.ENV === "production"
+          ? `https://budegt-app-backend.onrender.com/transactions/${id}/edit`
+          : `http://localhost:3001/transactions/${id}/edit`
+
+          let result = await axios.put(url, 
           {
             item_name: itemNameState,
             amount: amountState,

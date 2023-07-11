@@ -14,9 +14,26 @@ function Transactions() {
         doMath();
       }, []);
     
+      // async function fetchData() {
+        
+      //   try {
+          
+      //     let result = await axios.get("http://localhost:3001/transactions");
+
+      //     setTransactionsArray(result.data);
+
+      //   } catch (e) {
+      //     console.log(e);
+      //   }
+      // }
+      // This is another way to do it when deploying to the cloud
       async function fetchData() {
         try {
-          let result = await axios.get("http://localhost:3001/transactions");
+          const url = process.env.NODE.ENV === "production"
+          ? "https://budegt-app-backend.onrender.com/transactions"
+          : `http://localhost:3001/transactions`
+
+          let result = await axios.get(url);
 
           setTransactionsArray(result.data);
 

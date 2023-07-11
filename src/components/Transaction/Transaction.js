@@ -16,7 +16,11 @@ function Transaction() {
 
   async function fetchData(){
     try {
-      let result = await axios.get(`http://localhost:3001/transactions/${id}`)
+      const url = process.env.NODE.ENV === "production"
+      ? "https://budegt-app-backend.onrender.com/transactions/${id}"
+      : `http://localhost:3001/transactions/${id}`
+
+      let result = await axios.get(url)
       setData(result.data.data)
 
     } catch (error) {

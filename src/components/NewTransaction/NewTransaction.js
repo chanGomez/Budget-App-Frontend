@@ -17,7 +17,11 @@ async function handleOnSubmit(event) {
     event.preventDefault();
 
     try {
-      let result = await axios.post(`http://localhost:3001/transactions/new-transaction`, {
+      const url = process.env.NODE.ENV === "production"
+      ? "https://budegt-app-backend.onrender.com/transactions/new-transaction"
+      : `http://localhost:3001/transactions/new-transaction`
+
+      let result = await axios.post(url, {
         ...data,
       });
 
