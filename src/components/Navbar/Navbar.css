@@ -1,0 +1,25 @@
+header {
+    background-color: rgb(37, 170, 141);
+  }
+  
+  header nav ul {
+    display: -webkit-flex;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: flex-end;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: white;
+  }
+  
+  .left {
+    margin-right: auto;
+    padding: 25px 25px;
+  }
+  
+  .right {
+    padding: 25px 25px;
+  }
