@@ -11,22 +11,8 @@ function Transactions() {
 
     useEffect(() => {
         fetchData();
-        doMath();
       }, []);
-    
-      // async function fetchData() {
-        
-      //   try {
-          
-      //     let result = await axios.get("http://localhost:3001/transactions");
 
-      //     setTransactionsArray(result.data);
-
-      //   } catch (e) {
-      //     console.log(e);
-      //   }
-      // }
-      // This is another way to do it when deploying to the cloud
       async function fetchData() {
         try {
           const url = process.env.NODE_ENV === "production"
@@ -37,14 +23,8 @@ function Transactions() {
 
           setTransactionsArray(result.data);
 
-        } catch (e) {
-          console.log(e);
-        }
-      }
 
-      function doMath(){
-
-        const sum = transactionsArray.reduce((accumulator, object) => {
+        const sum = result.data.reduce((accumulator, object) => {
           return Number(accumulator) + Number(object.amount)
         }, 0);
         
@@ -59,6 +39,11 @@ function Transactions() {
         }else(
           setChangingColor("red")
         )
+          
+
+        } catch (e) {
+          console.log(e);
+        }
       }
   
   return (
