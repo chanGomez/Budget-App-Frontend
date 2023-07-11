@@ -21,8 +21,6 @@ async function handleOnSubmit(event) {
         ...data,
       });
 
-    //   console.log(result.data.data.id);
-
     let id = result.data.data.id
 
       alert("Success");
@@ -47,16 +45,17 @@ async function handleOnSubmit(event) {
               onChange={(e) => {
                 setData({ ...data, item_name: e.target.value });
               }}
-            />
+              required/>
             </div>
+            
             <div >
               <label>Amount: </label>
-              <input type="text"
+              <input type="number"
               value={data.amount}
               onChange={(e) => {
                 setData({ ...data, amount: e.target.value });
               }}
-            />
+              required/>
             </div>
   
             <div >
@@ -66,7 +65,7 @@ async function handleOnSubmit(event) {
               onChange={(e) => {
                 setData({ ...data, from: e.target.value });
               }}
-            />
+              required/>
             </div>
   
             <div >
@@ -76,7 +75,7 @@ async function handleOnSubmit(event) {
               onChange={(e) => {
                 setData({ ...data, date: e.target.value });
               }}
-            />
+              required/>
             </div>
   
             <div >
@@ -86,7 +85,7 @@ async function handleOnSubmit(event) {
               onChange={(e) => {
                 setData({ ...data, category: e.target.value });
               }}
-            />
+              required/>
             </div>  
             <button>Submit</button>
           </form>

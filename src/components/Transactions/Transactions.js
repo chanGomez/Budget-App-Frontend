@@ -17,8 +17,7 @@ function Transactions() {
       async function fetchData() {
         try {
           let result = await axios.get("http://localhost:3001/transactions");
-          // console.log(result);
-          console.log(result.data);
+
           setTransactionsArray(result.data);
 
         } catch (e) {
@@ -48,8 +47,7 @@ function Transactions() {
   return (
     <div>
         <div>
-          <h3>Bank Account Total: 
-          <p style={ { color: changingColor } }>{balance}</p></h3>
+          <h3>Bank Account Total: <span style={ { color: changingColor } }>{balance}</span></h3>
         </div>
         {transactionsArray.map(({id, item_name, amount, date,  }) =>{
             return (
@@ -57,7 +55,7 @@ function Transactions() {
                 <ul>
                     <li>{date}</li>
                     <li>
-                        <Link to={`/${id}`}>{item_name}</Link>
+                        <Link to={`/${id}`} style={ { color: "black" } }>{item_name}</Link>
                     </li>
                     <li>{amount}</li>
                 </ul>               

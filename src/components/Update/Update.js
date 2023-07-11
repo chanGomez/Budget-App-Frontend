@@ -90,30 +90,35 @@ function Update() {
             <div >
               <label>Item Name: </label>
               <input type="text" value={itemNameState} 
-              onChange={(e) => setItemNameState(e.target.value)}/>
+              onChange={(e) => setItemNameState(e.target.value)}
+              required/>
             </div>
             <div >
               <label>Amount: </label>
               <input type="number"value={amountState}
-              onChange={(e) => setAmountState(e.target.value)} />
+              onChange={(e) => setAmountState(e.target.value)} 
+              required/>
             </div>
   
             <div >
               <label>From: </label>
               <input type="text" value={fromState}
-              onChange={(e) => setFromState(e.target.value)}/>
+              onChange={(e) => setFromState(e.target.value)}
+              required/>
             </div>
   
             <div >
               <label>Date: </label>
               <input type="text" value={dateState}
-              onChange={(e) => setDateState(e.target.value)}/>
+              onChange={(e) => setDateState(e.target.value)}
+              required/>
             </div>
   
             <div >
               <label>Catergory: </label>
               <input type="text" value={catergoryState}
-              onChange={(e) => setCategoryState(e.target.value)}/>
+              onChange={(e) => setCategoryState(e.target.value)}
+              required/>
             </div>  
             <button>Submit</button>
           </form>

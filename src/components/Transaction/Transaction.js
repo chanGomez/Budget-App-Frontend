@@ -6,7 +6,6 @@ function Transaction() {
   const { id } = useParams()
 
   const [data, setData] = useState(null)
-
   const [arrayTransactions, setArrayTransactions] = useState([])
 
   const navigate = useNavigate()
@@ -19,7 +18,7 @@ function Transaction() {
     try {
       let result = await axios.get(`http://localhost:3001/transactions/${id}`)
       setData(result.data.data)
-      // console.log(result);
+
     } catch (error) {
       console.log(error);
     }
