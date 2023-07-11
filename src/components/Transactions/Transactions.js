@@ -30,7 +30,7 @@ function Transactions() {
       async function fetchData() {
         try {
           const url = process.env.NODE.ENV === "production"
-          ? "https://budegt-app-backend.onrender.com/transactions"
+          ? `https://budegt-app-backend.onrender.com/transactions`
           : `http://localhost:3001/transactions`
 
           let result = await axios.get(url);
