@@ -35,7 +35,11 @@ function Transaction() {
 
   async function handleDeleteById(){
     try {
-      let result = await axios.delete(`http://localhost:3001/transactions/${id}`)
+      const url = process.env.NODE_ENV === "production"
+      ? `https://budegt-app-backend.onrender.com/transactions/${id}`
+      : `http://localhost:3001/transactions/${id}`
+
+      let result = await axios.delete(url)
 
       let filteredArray = arrayTransactions.filter((item) => item.id !== id);
 
